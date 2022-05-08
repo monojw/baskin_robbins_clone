@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/baskin_robbins_clone/static/css/main.d559412c.css",
+    "main.js": "/baskin_robbins_clone/static/js/main.bf1dee76.js",
+    "index.html": "/baskin_robbins_clone/index.html",
+    "main.d559412c.css.map": "/baskin_robbins_clone/static/css/main.d559412c.css.map",
+    "main.bf1dee76.js.map": "/baskin_robbins_clone/static/js/main.bf1dee76.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d559412c.css",
+    "static/js/main.bf1dee76.js"
+  ]
+}
