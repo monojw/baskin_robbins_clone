@@ -99,17 +99,17 @@ const SnsSection = () => {
         </Link>
       </h4>
       {/* instagram */}
-      <div className="insta">
+      {/* <div className="insta">
         {thumb.map((v, i) => (
           <div key={i} className="thumb">
             <ThumbImg src={v} />
           </div>
         ))}
-      </div>
-
-      {/* <div className="insta">
-        <Insta src="https://www.attractt.com/embed/grid/LEDo66DdnaG4Rdw?loc=http://www.baskinrobbins.co.kr/&target=attractt-ifm-0" />
       </div> */}
+
+      <div className="insta">
+        <Insta src="https://www.attractt.com/embed/grid/LEDo66DdnaG4Rdw?loc=http://www.baskinrobbins.co.kr/&target=attractt-ifm-0" />
+      </div>
     </SnsSectionContainer>
   );
 };
