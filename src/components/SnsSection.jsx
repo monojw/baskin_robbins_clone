@@ -35,7 +35,7 @@ const SnsSectionContainer = styled.div`
       height: 13px;
       margin-left: -149px;
       text-align: center;
-      z-index: 9999999;
+      z-index: 9999;
     }
   }
 

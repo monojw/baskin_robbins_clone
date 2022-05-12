@@ -1,4 +1,34 @@
 const data = {
+  search: {
+    category: [
+      '전체',
+      '아이스크림',
+      '아이스크림케이크',
+      '음료',
+      '커피',
+      '디저트',
+      'block pack',
+      'ready pack',
+    ],
+    allergy: [
+      '계란',
+      '대두',
+      '돼지고기',
+      '땅콩',
+      '밀',
+      '복숭아',
+      '우유',
+      '없음',
+    ],
+    hashtag: [
+      '피카피카피카츄',
+      '피카츄초코바나나블라스트',
+      '쿨쿨잠만보밀키소다블라스트',
+      '고라파덕아이스크림콘',
+      '푸린아이스크림콘',
+      '포켓몬스터',
+    ],
+  },
   header: {
     img: [
       'http://www.baskinrobbins.co.kr/assets/images/common/icon_facebook.png',
@@ -163,14 +193,12 @@ const data = {
       ],
     ],
   },
-
   menu: {
     bgImg: 'https://www.baskinrobbins.co.kr/assets/images/main/bg_menu.jpg',
     title: 'https://www.baskinrobbins.co.kr/assets/images/main/h_menu.png',
     menuImg:
       'https://www.baskinrobbins.co.kr/assets/images/main/img_menu_list_220429.png?v=220429',
   },
-
   store: [
     {
       title: 'http://www.baskinrobbins.co.kr/assets/images/main/h_store.png',
@@ -182,7 +210,6 @@ const data = {
       desc: 'http://www.baskinrobbins.co.kr/assets/images/main/img_happyorder_delivery.png',
     },
   ],
-
   sns: {
     title: 'https://www.baskinrobbins.co.kr/assets/images/main/h_sns.png',
     logo: [
@@ -211,7 +238,6 @@ const data = {
       'https://cdn.attractt.com/contents/2021/04/26/CUJgLTmPoXF_image.jpg',
     ],
   },
-
   footer: {
     brand: [
       'https://www.baskinrobbins.co.kr/assets/images/common/btn_happypoint.png',

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import data from '../data';
+import SearchBar from './SearchBar';
 
 const HeaderContainer = styled.header`
+  position: relative;
   min-width: 1200px;
   border-top: 3px solid #ff7c98;
   background: url(http://www.baskinrobbins.co.kr/assets/images/common/bg_header.gif)
@@ -76,6 +78,13 @@ const HeaderRight = styled.div`
           background: url(http://www.baskinrobbins.co.kr/assets/images/common/icon_search.png)
             no-repeat;
           text-indent: -9999em;
+        }
+      }
+
+      &.searchClick {
+        a {
+          background: url(https://www.baskinrobbins.co.kr/assets/images/common/btn_search_close.gif)
+            no-repeat;
         }
       }
     }
@@ -238,6 +247,7 @@ const GNBSub = styled.ul`
 `;
 
 const Header = () => {
+  const [searchClick, setSearchClick] = useState(false);
   const {
     header: { img, gnb },
   } = data;
@@ -254,6 +264,9 @@ const Header = () => {
 
   return (
     <HeaderContainer>
+      {/* Search bar */}
+      <SearchBar searchClick={searchClick} />
+
       {/* Header Top */}
       <HeaderTop className="container">
         {/* logo */}
@@ -283,13 +296,17 @@ const Header = () => {
             <li>
               <Link to="/">CONTACT US</Link>
             </li>
-            <li className="search">
+            <li
+              className={searchClick ? 'search searchClick' : 'search'}
+              onClick={() => {
+                setSearchClick(!searchClick);
+              }}
+            >
               <Link to="/">search</Link>
             </li>
           </ul>
         </HeaderRight>
       </HeaderTop>
-
       {/* Header Bottom */}
       <HeaderBottom className="container">
         {/* member */}
