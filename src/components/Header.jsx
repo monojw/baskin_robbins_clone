@@ -8,16 +8,20 @@ const HeaderContainer = styled.header`
   position: relative;
   min-width: 1200px;
   border-top: 3px solid #ff7c98;
+  border-bottom: 2px solid #3f291a;
   background: url(http://www.baskinrobbins.co.kr/assets/images/common/bg_header.gif)
     50% 0 repeat-x;
 `;
 
 /* Header Top */
 const HeaderTop = styled.div`
-  position: relative;
   height: 135px;
   padding-top: 21px;
   border-bottom: 1px solid #e2d9d6;
+
+  .container {
+    position: relative;
+  }
 `;
 
 const HeaderLogo = styled.div`
@@ -162,7 +166,7 @@ const GNB = styled.nav`
   .gnbBg {
     overflow: hidden;
     position: absolute;
-    top: 185px;
+    top: 182px;
     left: 0;
     height: 0;
     z-index: 999;
@@ -268,44 +272,46 @@ const Header = () => {
       <SearchBar searchClick={searchClick} />
 
       {/* Header Top */}
-      <HeaderTop className="container">
-        {/* logo */}
-        <HeaderLogo>
-          <Link to="/"></Link>
-        </HeaderLogo>
+      <HeaderTop>
+        <div className="container">
+          {/* logo */}
+          <HeaderLogo>
+            <Link to="/"></Link>
+          </HeaderLogo>
 
-        {/* left */}
-        <HeaderLeft>
-          <ul>
-            {img.map((v, i) => (
-              <li key={i}>
-                <Link to="/">
-                  <SnsImg img={v} />
-                </Link>
+          {/* left */}
+          <HeaderLeft>
+            <ul>
+              {img.map((v, i) => (
+                <li key={i}>
+                  <Link to="/">
+                    <SnsImg img={v} />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </HeaderLeft>
+
+          {/* right */}
+          <HeaderRight>
+            <ul>
+              <li>
+                <Link to="/">고객센터</Link>
               </li>
-            ))}
-          </ul>
-        </HeaderLeft>
-
-        {/* right */}
-        <HeaderRight>
-          <ul>
-            <li>
-              <Link to="/">고객센터</Link>
-            </li>
-            <li>
-              <Link to="/">CONTACT US</Link>
-            </li>
-            <li
-              className={searchClick ? 'search searchClick' : 'search'}
-              onClick={() => {
-                setSearchClick(!searchClick);
-              }}
-            >
-              <Link to="/">search</Link>
-            </li>
-          </ul>
-        </HeaderRight>
+              <li>
+                <Link to="/">CONTACT US</Link>
+              </li>
+              <li
+                className={searchClick ? 'search searchClick' : 'search'}
+                onClick={() => {
+                  setSearchClick(!searchClick);
+                }}
+              >
+                <Link to="/">search</Link>
+              </li>
+            </ul>
+          </HeaderRight>
+        </div>
       </HeaderTop>
       {/* Header Bottom */}
       <HeaderBottom className="container">
@@ -324,7 +330,6 @@ const Header = () => {
             </li>
           </ul>
         </Memeber>
-
         {/* gnb */}
         <GNB>
           <ul className="depth1">
