@@ -6,13 +6,14 @@ import styled from 'styled-components';
 const SearchBarContainer = styled.div`
   position: absolute;
   width: 100%;
-  margin-top: 183px;
+  display: none;
   background: #fff;
   z-index: 9999;
   opacity: 0;
   transition: all 0.4s ease 0.1s;
 
   &.searchClick {
+    display: block;
     opacity: 1;
   }
 

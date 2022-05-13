@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import data from '../data';
@@ -184,11 +184,6 @@ const GNB = styled.nav`
     }
   }
 
-  &:hover .gnbBg,
-  &:hover .depth2 {
-    height: 275px;
-  }
-
   .depth2 img {
     opacity: 0;
     transition: opacity 0.3s linear;
@@ -225,7 +220,7 @@ const GNBSub = styled.ul`
   top: 100%;
   left: 0;
   overflow: hidden;
-  height: 0;
+  max-height: 0;
   width: 100%;
   z-index: 1000;
 
@@ -252,6 +247,9 @@ const GNBSub = styled.ul`
 
 const Header = () => {
   const [searchClick, setSearchClick] = useState(false);
+  const refs = useRef([]);
+  const bgRef = useRef();
+
   const {
     header: { img, gnb },
   } = data;
@@ -268,9 +266,6 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      {/* Search bar */}
-      <SearchBar searchClick={searchClick} />
-
       {/* Header Top */}
       <HeaderTop>
         <div className="container">
@@ -313,6 +308,7 @@ const Header = () => {
           </HeaderRight>
         </div>
       </HeaderTop>
+
       {/* Header Bottom */}
       <HeaderBottom className="container">
         {/* member */}
@@ -330,8 +326,20 @@ const Header = () => {
             </li>
           </ul>
         </Memeber>
+
         {/* gnb */}
-        <GNB>
+        <GNB
+          onMouseOver={() => {
+            refs.current.map(
+              (v) => (v.style.maxHeight = v.scrollHeight + 'px'),
+            );
+            bgRef.current.style.height = 275 + 'px';
+          }}
+          onMouseOut={() => {
+            refs.current.map((v) => (v.style.maxHeight = 0));
+            bgRef.current.style.height = 0;
+          }}
+        >
           <ul className="depth1">
             {gnb.map((v, i) => {
               const { main, sub } = v;
@@ -349,7 +357,12 @@ const Header = () => {
                     </Link>
                   </GNBMain>
 
-                  <GNBSub className="depth2">
+                  <GNBSub
+                    className="depth2"
+                    ref={(el) => {
+                      refs.current[i] = el;
+                    }}
+                  >
                     {sub.map((v2, i2) => (
                       /* depth2 */
                       <li key={i2}>
@@ -369,11 +382,14 @@ const Header = () => {
           </ul>
 
           {/* GNB Background */}
-          <div className="gnbBg">
+          <div className="gnbBg" ref={bgRef}>
             <div></div>
           </div>
         </GNB>
       </HeaderBottom>
+
+      {/* Search bar */}
+      <SearchBar searchClick={searchClick} />
     </HeaderContainer>
   );
 };
