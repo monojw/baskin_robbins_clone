@@ -126,12 +126,31 @@ const SearchBarContainer = styled.div`
   }
 `;
 
+const BgModal = styled.div`
+  display: none;
+  position: absolute;
+  top: 275px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  height: 5000px;
+  &.searchClick {
+    display: block;
+    opacity: 0.5;
+  }
+`;
+
 const SearchBar = ({ searchClick }) => {
   const {
     search: { category, allergy, hashtag },
   } = data;
   return (
     <SearchBarContainer className={searchClick && 'searchClick'}>
+      <BgModal className={searchClick && 'searchClick'}></BgModal>
+
       <div className="container">
         <table>
           <tbody>
