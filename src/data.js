@@ -220,23 +220,6 @@ const data = {
       'https://www.baskinrobbins.co.kr/assets/images/main/sns_youtube.png',
     ],
     subTitle: 'https://www.baskinrobbins.co.kr/assets/images/main/tit_sns.png',
-    thumb: [
-      'https://cdn.attractt.com/contents/2021/04/26/CT01jycp6bZ_carousel_01.jpg',
-      'https://cdn.attractt.com/contents/2021/04/26/CT01jycp6bZ_carousel_02.jpg',
-      'https://cdn.attractt.com/contents/2021/04/26/CT01jycp6bZ_carousel_03.jpg',
-      'https://cdn.attractt.com/contents/2021/04/26/CT01jycp6bZ_carousel_04.jpg',
-      'https://cdn.attractt.com/contents/2021/04/26/CT01jycp6bZ_carousel_05.jpg',
-      'https://cdn.attractt.com/contents/2021/04/26/CT01jycp6bZ_carousel_06.jpg',
-      'https://cdn.attractt.com/contents/2021/04/26/CT01jycp6bZ_carousel_07.jpg',
-      'https://cdn.attractt.com/contents/2021/04/26/Cay-FJQFnhu_image.jpg',
-      'https://cdn.attractt.com/contents/2021/04/26/CbB44VdJaEu_image.jpg',
-      'https://cdn.attractt.com/contents/2021/04/26/CbKc-1XpXSt_image.jpg',
-      'https://cdn.attractt.com/contents/2021/04/26/CbG5i7uhj3B_image.jpg',
-      'https://cdn.attractt.com/contents/2021/04/26/CbKc-1XpXSt_image.jpg',
-      'https://cdn.attractt.com/contents/2021/04/26/CbZmUMPJ7sB_image.jpg',
-      'https://cdn.attractt.com/contents/2021/04/26/CbcNgLrFPTg_image.jpg',
-      'https://cdn.attractt.com/contents/2021/04/26/CUJgLTmPoXF_image.jpg',
-    ],
   },
   footer: {
     brand: [
