@@ -74,17 +74,18 @@ const SnsSection = () => {
     sns: { title, logo, subTitle },
   } = data;
 
-  const [insta, setInsta] = useState([]);
-  useEffect(() => {
-    (async () => {
-      try {
-        const response = await axios.get('http://localhost:3001/insta');
-        setInsta(response.data);
-      } catch (e) {
-        console.error(e);
-      }
-    })();
-  }, []);
+  // axios json-server
+  // const [insta, setInsta] = useState([]);
+  // useEffect(() => {
+  //   (async () => {
+  //     try {
+  //       const response = await axios.get('http://localhost:3001/insta');
+  //       setInsta(response.data);
+  //     } catch (e) {
+  //       console.error(e);
+  //     }
+  //   })();
+  // }, []);
 
   return (
     <SnsSectionContainer className="container">
@@ -111,17 +112,16 @@ const SnsSection = () => {
         </Link>
       </h4>
       {/* instagram */}
-      <div className="insta">
+      {/* <div className="insta">
         {insta.map((v, i) => (
           <div key={i} className="thumb">
             <ThumbImg src={v.src} />
           </div>
         ))}
-      </div>
-
-      {/* <div className="insta">
-        <Insta src="https://www.attractt.com/embed/grid/LEDo66DdnaG4Rdw?loc=http://www.baskinrobbins.co.kr/&target=attractt-ifm-0" />
       </div> */}
+      <div className="insta">
+        <Insta src="https://www.attractt.com/embed/grid/LEDo66DdnaG4Rdw?loc=http://www.baskinrobbins.co.kr/&target=attractt-ifm-0" />
+      </div>
     </SnsSectionContainer>
   );
 };
